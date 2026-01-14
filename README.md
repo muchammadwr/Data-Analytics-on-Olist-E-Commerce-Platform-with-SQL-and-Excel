@@ -1,3 +1,4 @@
 ﻿# Data-Analytics-on-Olist-E-Commerce-Platform-with-Excel
 
-![Dashboard](Images/Customers)
+![Dashboard](Images/Customers.png)
+
