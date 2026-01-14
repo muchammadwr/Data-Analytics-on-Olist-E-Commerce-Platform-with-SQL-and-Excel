@@ -1,4 +1,4 @@
 ﻿# Data-Analytics-on-Olist-E-Commerce-Platform-with-Excel
 
 ![Dashboard](Images/Customers.png)
-![Videos](Videos/VideosInteractive.mp4)
+![Videos](https://github.com/muchammadwr/Data-Analytics-on-Olist-E-Commerce-Platform-with-Excel/blob/main/Videos/VideosInteractive.mp4)
