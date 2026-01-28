@@ -64,7 +64,9 @@ This project provides a structured and easy-to-understand analytical dashboard t
 <img width="1920" height="1080" alt="Products" src="https://github.com/user-attachments/assets/8d2db398-ba3a-4813-8cc5-add6fb7c5409" />
 <img width="1920" height="1080" alt="Deliverys" src="https://github.com/user-attachments/assets/01daa9dc-a5cd-456a-90e8-0f71f5b60c92" />
 <img width="1920" height="1080" alt="Customers" src="https://github.com/user-attachments/assets/c8d1ca76-201e-44f4-bdf3-c30787eb9a89" />
+
 https://github.com/user-attachments/assets/e898d17c-e691-4cbc-9358-f2257453ce3d
+
 
 
 
