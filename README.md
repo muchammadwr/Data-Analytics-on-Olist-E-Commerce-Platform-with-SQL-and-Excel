@@ -61,11 +61,13 @@ The project follows three main milestones:
 ## Outcome
 This project provides a structured and easy-to-understand analytical dashboard that helps stakeholders identify performance gaps, optimize logistics and product strategies, and improve overall customer experience in a scalable and sustainable way.
 
-<img width="1920" height="1080" alt="Products" src="https://github.com/user-attachments/assets/8d2db398-ba3a-4813-8cc5-add6fb7c5409" />
-<img width="1920" height="1080" alt="Deliverys" src="https://github.com/user-attachments/assets/01daa9dc-a5cd-456a-90e8-0f71f5b60c92" />
-<img width="1920" height="1080" alt="Customers" src="https://github.com/user-attachments/assets/c8d1ca76-201e-44f4-bdf3-c30787eb9a89" />
+<img width="1920" height="1080" alt="Products" src="https://github.com/user-attachments/assets/1b9c61ea-c621-4502-acb4-2d349386f928" />
+<img width="1920" height="1080" alt="Deliverys" src="https://github.com/user-attachments/assets/f6c0d931-965f-4545-9878-8dbe251562d6" />
+<img width="1920" height="1080" alt="Customers" src="https://github.com/user-attachments/assets/d571674a-85a8-44f8-9513-f93b7f2bd9db" />
+
 
 https://github.com/user-attachments/assets/e898d17c-e691-4cbc-9358-f2257453ce3d
+
 
 
 
