@@ -186,6 +186,84 @@ SELECT
     SUM(CASE WHEN freight_value IS NULL THEN 1 ELSE 0 END) AS freight_nulls
 FROM olist_order_items_dataset;
 
+-- Create Coloumn Category Product Group on product_category_name_translation
+ALTER TABLE product_category_name_translation 
+ADD COLUMN product_category_group VARCHAR(50)
+;
+
+-- Add Category Group 
+UPDATE product_category_name_translation
+SET product_category_group = 
+	CASE
+    	WHEN product_category_name_english IN (
+    		'bed_bath_table','furniture_bedroom','furniture_decor',
+    		'furniture_living_room','furniture_mattress_and_upholstery',
+        	'home_appliances','home_appliances_2','home_comfort_2',
+        	'home_confort','home_construction','housewares',
+        	'kitchen_dining_laundry_garden_furniture','office_furniture',
+        	'small_appliances','small_appliances_home_oven_and_coffee'
+    ) THEN 'Home & Furniture'
+    	WHEN product_category_name_english IN (
+    		'air_conditioning','audio','cds_dvds_musicals','cine_photo',
+    		'computers','computers_accessories','consoles_games',
+    		'dvds_blu_ray','electronics','fixed_telephony',
+    		'tablets_printing_image','telephony'
+    ) THEN 'Electronics & Technology'
+    	WHEN product_category_name_english IN (
+    		'cool_stuff','music','musical_instruments',
+    		'sports_leisure','toys'
+    ) THEN 'Sports & Leisure'
+    	WHEN product_category_name_english IN (
+    		'health_beauty','perfumery'
+    ) THEN 'Beauty & Health'
+    	WHEN product_category_name_english IN (
+    		'fashio_female_clothing','fashion_bags_accessories',
+    		'fashion_childrens_clothes','fashion_male_clothing',
+    		'fashion_shoes','fashion_sport',
+    		'fashion_underwear_beach','watches_gifts'
+    ) THEN 'Fashion'
+    	WHEN product_category_name_english IN (
+    		'construction_tools_construction','construction_tools_lights',
+    		'construction_tools_safety','costruction_tools_garden',
+    		'costruction_tools_tools','garden_tools'
+    ) THEN 'Construction & Tools'
+    	WHEN product_category_name_english = 'auto' THEN 'Automotive'
+    WHEN product_category_name_english IN (
+    		'baby',
+    		'diapers_and_hygiene')
+    THEN 'Baby Care'
+    	WHEN product_category_name_english = 'stationery'
+    THEN 'Office & Stationery'
+    	WHEN product_category_name_english = 'pet_shop'
+    THEN 'Animal Care'
+    	WHEN product_category_name_english = 'luggage_accessories'
+    THEN 'Travel'
+    	WHEN product_category_name_english IN (
+        'drinks','food','food_drink','la_cuisine'
+    ) THEN 'Food & Drink'
+    	WHEN product_category_name_english IN (
+        'agro_industry_and_commerce','flowers'
+    ) THEN 'Agriculture'
+    	WHEN product_category_name_english IN (
+        'industry_commerce_and_business','market_place'
+    ) THEN 'Marketplace'
+    	WHEN product_category_name_english IN (
+        'books_general_interest','books_imported','books_technical'
+    ) THEN 'Books'
+    	WHEN product_category_name_english IN (
+        'security_and_services','signaling_and_security'
+    ) THEN 'Security'
+    	WHEN product_category_name_english IN (
+        'art','arts_and_craftmanship'
+    ) THEN 'Arts & Crafts'
+    	WHEN product_category_name_english = 'christmas_supplies'
+    THEN 'Accessories'
+    	WHEN product_category_name_english = 'party_supplies'
+    THEN 'Party Supplies'
+    	ELSE 'Others'
+END;
+
+
 -- TABLE PRODUCTS
 -- Show 5 top rows
 SELECT * 
@@ -208,4 +286,8 @@ FROM (
     SELECT DISTINCT *
     FROM olist_products_dataset opd 
 ) t;
+
+SELECT 
+	COUNT(DISTINCT pcnt.product_category_group )
+FROM product_category_name_translation pcnt 
 
