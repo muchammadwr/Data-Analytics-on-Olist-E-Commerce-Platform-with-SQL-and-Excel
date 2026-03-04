@@ -260,8 +260,43 @@ SET product_category_group =
     THEN 'Accessories'
     	WHEN product_category_name_english = 'party_supplies'
     THEN 'Party Supplies'
+    	WHEN product_category_name = 'portateis_cozinha_e_preparadores_de_alimentos'
+    THEN 'Home & Furniture'
+   		WHEN product_category_name = 'pc_gamer'
+   	THEN 'Electronics & Technology'
     	ELSE 'Others'
 END;
+
+
+-- Fix the column city
+UPDATE olist_customers_dataset
+SET customer_city  =
+    UPPER(REPLACE(LTRIM(RTRIM(customer_city)), '-', ' '));
+
+UPDATE olist_customers_dataset
+SET customer_city =
+    UPPER(
+        REPLACE(
+            REPLACE(
+                LTRIM(RTRIM(customer_city)),
+            '''',''),
+        '  ',' ')
+    );
+
+-- Add value
+INSERT INTO product_category_name_translation (
+	product_category_name,
+	product_category_name_english,
+	product_category_group
+)
+VALUES 
+('pc_gamer', 'pc_gamer', 'Electronics & Technology'),
+('portateis_cozinha_e_preparadores_de_alimentos', 'portable_kitchen_and_food_preparators', 'Home & Furniture')
+;
+
+SELECT 
+*
+FROM product_category_name_translation pcnt 
 
 
 -- TABLE PRODUCTS

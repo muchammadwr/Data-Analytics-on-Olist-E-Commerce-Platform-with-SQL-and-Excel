@@ -24,8 +24,9 @@ WITH delivery AS (
 	SELECT 
 		order_id,
 		CASE 
-			WHEN order_delivered_customer_date::date < order_estimated_delivery_date::date THEN 'Early'
-			WHEN order_delivered_customer_date::date = order_estimated_delivery_date::date THEN 'On-Time'
+			WHEN order_delivered_customer_date::date < order_estimated_delivery_date::date OR
+			order_delivered_customer_date::date = order_estimated_delivery_date::date 
+			THEN 'On-Time'
 			WHEN order_delivered_customer_date::date > order_estimated_delivery_date::date THEN 'Late'
 			ELSE 'Not Delivered'
 		END AS delivery_status
@@ -40,10 +41,9 @@ ORDER BY total_orders DESC
 
 delivery_status|total_orders|
 ---------------+------------+
-Early          |       88649|
+On-Time        |       89941|
 Late           |        6535|
 Not Delivered  |        2965|
-On-Time        |        1292|
 
 -- Delvery Status by date
 SELECT
